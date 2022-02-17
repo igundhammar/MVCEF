@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - CDCollection</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+</head>
+<body>
+<header>
+    <nav>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Artist" asp-action="Index">Artists</a>
+        <a asp-controller="Album" asp-action="Index">Albums</a>
+        <a asp-controller="Rent" asp-action="Index">Rent</a>
+    </nav>
+</header>
+<div class="container">
+    <main>
+        @RenderBody()
+    </main>
+</div>
+<footer>
+</footer>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

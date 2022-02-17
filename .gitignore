@@ -1,0 +1,9 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+Migrations/
+CDCollectionDb.db
+CDCollectionDb.db-shm
+CDCollectionDb.db-wal
