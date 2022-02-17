@@ -7,3 +7,4 @@ Migrations/
 CDCollectionDb.db
 CDCollectionDb.db-shm
 CDCollectionDb.db-wal
+.idea
