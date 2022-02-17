@@ -23,14 +23,17 @@ namespace CDCollection.Controllers
         // GET: Album
         public async Task<IActionResult> Index(string searchString)
         {
-            
-            var albums = from a in _context.Albums
-                select a;
             if (!String.IsNullOrEmpty(searchString))
             {
-                albums = albums.Where(s => s.Name!.ToLower().Contains(searchString.ToLower()));
+                var cDCollectionContext = _context.Albums.Include(a => a.Artist)
+                    .Where(s => s.Name!.ToLower().Contains(searchString.ToLower()));
+                return View(await cDCollectionContext.ToListAsync());
             }
-            return View(await albums.ToListAsync());
+            else
+            {
+                var cDCollectionContext = _context.Albums.Include(a => a.Artist);
+                return View(await cDCollectionContext.ToListAsync());
+            }
         }
 
         // GET: Album/Details/5
@@ -73,7 +76,7 @@ namespace CDCollection.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Name", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
             return View(album);
         }
 
@@ -91,7 +94,7 @@ namespace CDCollection.Controllers
                 return NotFound();
             }
 
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Name", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
             return View(album);
         }
 
@@ -129,7 +132,7 @@ namespace CDCollection.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Name", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
             return View(album);
         }
 

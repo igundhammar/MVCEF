@@ -9,6 +9,8 @@ public class Rent
     public string? FirstName { get; set; }
     [Display(Name="Last Name")]
     public string? LastName { get; set; }
+    
+    [DisplayFormat(DataFormatString = "{0:U}")]
     public DateTime Date { get; set; }
     
     [Display(Name="Album Name")]
