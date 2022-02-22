@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 </head>
 <body>
+<div class="container">
 <header>
     <nav>
         <a asp-controller="Home" asp-action="Index">Home</a>
@@ -20,7 +21,10 @@
         @RenderBody()
     </main>
 </div>
+</div>
 <footer>
+    <p>Ida Gundhammar</p>
+    <p><a href="https://github.com/igundhammar/MVCEF">GitHub</a></p>
 </footer>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)

@@ -22,7 +22,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td data-label="@(Html.DisplayNameFor(model => model.Name)):">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>

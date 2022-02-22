@@ -1,18 +1,126 @@
-html {
-  font-size: 14px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+  background: rgba(203, 203, 203, 0.59);
+  padding-bottom: 5rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+main, header, footer {
+  background: white;
+  max-width: 900px;
+  margin: 0 auto;
+  border-left: 5px solid black;
+}
+
+header {
+  padding: 2em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5em;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 0 1em;
+  box-shadow: 0 0;
+  transition: 0.2s ease-out;
+}
+
+nav a:hover {
+  color: black;
+  font-weight: 600;
+  box-shadow: 0 5px black;
+}
+
+.container {
+  padding: 2em 0;
+}
+
+main {
+  padding: 1em;
+}
+
+.search {
+  text-align: right;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-size: 2.2rem;
+  padding: 0.5em 0;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-spacing: 1em;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+}
+
+tr {
+  border-left: 5px solid black;
+  padding: 0.2em 1em;
+}
+
+main a, main a:visited {
+  color: #132fb2;
+  text-decoration: none;
+}
+
+main a:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+@media screen and (max-width: 1100px) {
+  thead tr {
+    position: absolute;
+    bottom: 100%;
+    pointer-events: none;
+  }
+  
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  td:before {
+    content: attr(data-label);
+    font-weight: 600;
+  }
 }
