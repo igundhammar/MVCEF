@@ -94,7 +94,7 @@ namespace CDCollection.Controllers
                 return NotFound();
             }
 
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Name", album.ArtistId);
             return View(album);
         }
 
